@@ -1,62 +1,53 @@
-Library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
-USE IEEE.STD_LOGIC_TEXTIO.ALL;
-USE STD.TEXTIO.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_textio.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.numeric_std.ALL;
+USE std.textio.ALL;
 
-Entity InstructionMem is 
-port(
-    PC            : inout std_logic_vector(15 downto 0); 
-    ResetSignal   : in std_logic;                         
-    InstructionOut: out std_logic_vector(15 downto 0)     
-);
-end Entity InstructionMem;
+ENTITY instruction_memory IS
+    PORT (
+        ResetMemory : IN STD_LOGIC;
+        Address : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+        DataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    );
+END ENTITY;
 
-Architecture InstructionMemarch of InstructionMem is
+ARCHITECTURE arch_instruction_memory OF instruction_memory IS
+    TYPE MemoryArray IS ARRAY(0 TO 4095) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
 
-    Type MemoryArray is Array(0 to 4095) of std_logic_vector(15 downto 0);
+    -- Declare signals for the memory and a default initialization
+    SIGNAL Ram : MemoryArray := (OTHERS => (OTHERS => '0'));
+    SIGNAL FirstAddress : STD_LOGIC_VECTOR(11 DOWNTO 0) := (OTHERS => '0');
 
-    Signal InstructionMemory, DefaultMemory : MemoryArray := (others => (others => '0'));
-    Signal IsFirstLoad   : std_logic := '1';
+BEGIN
 
-begin
+instruction_memory : PROCESS (Address, ResetMemory, FirstAddress, Ram) IS
+        FILE memory_file : TEXT;
+        VARIABLE fileLineContent : LINE;
+    
+        VARIABLE temp_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    BEGIN
+        IF (ResetMemory = '1') THEN
+            -- Only open the file once when initializing the memory
+            file_open(memory_file, "instructions.txt");
+            
+            FOR i IN Ram'RANGE LOOP
+                IF NOT ENDFILE(memory_file) THEN
+                    readline(memory_file, fileLineContent);
+                    read(fileLineContent, temp_data);
+                    Ram(i) <= temp_data;
+                ELSE
+                    -- If the file ends before loading all memory, close the file
+                    file_close(memory_file);
+                    EXIT;
+                END IF;
+            END LOOP;
+            DataOut <= Ram(to_integer(unsigned(FirstAddress)));
+        
+        ELSE
+            DataOut <= Ram(to_integer(unsigned(Address)));
+        END IF;
+    END PROCESS instruction_memory;
 
-    process (ResetSignal)
-        FILE instructionFile : TEXT OPEN READ_MODE IS "instructions.txt";
-        variable fileLineContent : line := null;
-        variable instructionData : std_logic_vector(15 downto 0);
-        variable memoryAddress   : integer := 0;
-        variable tempMemory      : MemoryArray := (others => (others => '0'));
-    begin
-        if (ResetSignal = '1') then  
-            if (IsFirstLoad = '1') then  -- If it's the first load of instructions
-                IsFirstLoad <= '0';  -- Mark as first load complete
-                report "Loading Instruction Memory";
-
-                -- Load instructions from the file
-                while not EndFile(instructionFile) loop
-                    readline(instructionFile, fileLineContent);  
-                    read(fileLineContent, instructionData);    
-                    tempMemory(memoryAddress) := instructionData;  
-                    memoryAddress := memoryAddress + 1;  
-                end loop;
-
-                file_close(instructionFile);
-
-                -- Copy the loaded data to the actual memory and default memory
-                InstructionMemory <= tempMemory;
-                DefaultMemory <= tempMemory;
-            else
-                -- If not the first load, keep the memory contents the same as default
-                InstructionMemory <= DefaultMemory;
-            end if;
-
-            PC <= (others => '0');  -- Point PC to the first instruction (address 0)
-
-            report "Reset Complete";
-        end if;
-    end process;
-
-    InstructionOut <= InstructionMemory(to_integer(unsigned(PC(11 downto 0))));  -- Fetch instruction from memory
-
-end Architecture InstructionMemarch;
+END ARCHITECTURE;
