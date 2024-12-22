@@ -2,6 +2,7 @@
     USE IEEE.std_logic_1164.ALL;
     USE IEEE.NUMERIC_STD.ALL;
 
+<<<<<<< Updated upstream
     ENTITY general_register_file IS
         GENERIC (
             REGISTER_SIZE : INTEGER := 16;
@@ -14,6 +15,20 @@
             read_data1, read_data2 : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0)
         );
     END ENTITY general_register_file;
+=======
+ENTITY general_register_file IS
+    GENERIC (
+        REGISTER_SIZE : INTEGER := 16;
+        REGISTER_NUMBER : INTEGER := 8
+    );
+    PORT (
+        write_enable, clk, reset : IN STD_LOGIC;
+        read_address1, read_address2, write_address : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        write_data : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
+        read_data1, read_data2 : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0)
+    );
+END ENTITY general_register_file;
+>>>>>>> Stashed changes
 
     ARCHITECTURE Behavioral OF general_register_file IS
         TYPE register_array IS ARRAY(NATURAL RANGE <>) OF STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
@@ -37,5 +52,11 @@
                     END IF;
                 END IF;
             END IF;
+<<<<<<< Updated upstream
         END PROCESS;
     END ARCHITECTURE Behavioral;
+=======
+        END IF;
+    END PROCESS;
+END ARCHITECTURE Behavioral;
+>>>>>>> Stashed changes
