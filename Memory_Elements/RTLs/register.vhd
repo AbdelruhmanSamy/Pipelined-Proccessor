@@ -12,7 +12,7 @@ ENTITY general_register IS
         data_in : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
         data_out : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0)
     );
-END general_register;
+END ENTITY general_register;
 
 ARCHITECTURE Behavioral OF general_register IS
     SIGNAL temp_data_out : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
@@ -30,4 +30,4 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-END Behavioral;
+END ARCHITECTURE Behavioral;

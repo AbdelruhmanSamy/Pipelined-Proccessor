@@ -13,7 +13,7 @@ ENTITY general_register_file IS
         write_data : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
         read_data1, read_data2 : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0)
     );
-END general_register_file;
+END ENTITY general_register_file;
 
 ARCHITECTURE Behavioral OF general_register_file IS
     TYPE register_array IS ARRAY(NATURAL RANGE <>) OF STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
@@ -38,4 +38,4 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-END Behavioral;
+END ARCHITECTURE Behavioral;

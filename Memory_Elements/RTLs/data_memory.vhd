@@ -32,9 +32,9 @@ BEGIN
     BEGIN
         IF (IsFirstLoad = '1' OR ResetMemory = '1') THEN
             -- Only open the file once when initializing the memory
-            
-                file_open(memory_file, "data.txt");
-            
+
+            file_open(memory_file, "data.txt");
+
             FOR i IN Ram'RANGE LOOP
                 IF NOT ENDFILE(memory_file) THEN
                     readline(memory_file, fileLineContent);
