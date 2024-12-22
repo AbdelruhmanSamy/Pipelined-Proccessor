@@ -22,15 +22,14 @@ ARCHITECTURE arch_data_memory OF data_memory IS
     -- Declare signals for the memory and a default initialization
     SIGNAL Ram : MemoryArray := (OTHERS => (OTHERS => '0'));
 
-    SIGNAL IsFirstLoad : STD_LOGIC := '1';
 BEGIN
 
-    data_memory : PROCESS (Address, DataIn, MemWrite, MemRead, ResetMemory) IS
+    data_memory : PROCESS (Address, DataIn, MemWrite, MemRead, ResetMemory, Ram) IS
         FILE memory_file : TEXT;
         VARIABLE fileLineContent : LINE;
         VARIABLE temp_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
     BEGIN
-        IF (IsFirstLoad = '1' OR ResetMemory = '1') THEN
+        IF (ResetMemory = '1') THEN
             -- Only open the file once when initializing the memory
 
             file_open(memory_file, "data.txt");
@@ -46,7 +45,6 @@ BEGIN
                     EXIT;
                 END IF;
             END LOOP;
-            IsFirstLoad <= '0';
             DataOut <= (OTHERS => '0');
         ELSIF MemWrite = '1' THEN
             Ram(to_integer(unsigned(Address))) <= DataIn(15 DOWNTO 0);
