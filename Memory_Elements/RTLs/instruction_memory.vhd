@@ -22,16 +22,16 @@ ARCHITECTURE arch_instruction_memory OF instruction_memory IS
 
 BEGIN
 
-instruction_memory : PROCESS (Address, ResetMemory, FirstAddress, Ram) IS
+    instruction_memory : PROCESS (Address, ResetMemory, FirstAddress, Ram) IS
         FILE memory_file : TEXT;
         VARIABLE fileLineContent : LINE;
-    
+
         VARIABLE temp_data : STD_LOGIC_VECTOR(15 DOWNTO 0);
     BEGIN
         IF (ResetMemory = '1') THEN
             -- Only open the file once when initializing the memory
             file_open(memory_file, "instructions.txt");
-            
+
             FOR i IN Ram'RANGE LOOP
                 IF NOT ENDFILE(memory_file) THEN
                     readline(memory_file, fileLineContent);
@@ -44,7 +44,7 @@ instruction_memory : PROCESS (Address, ResetMemory, FirstAddress, Ram) IS
                 END IF;
             END LOOP;
             DataOut <= Ram(to_integer(unsigned(FirstAddress)));
-        
+
         ELSE
             DataOut <= Ram(to_integer(unsigned(Address)));
         END IF;
