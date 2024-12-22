@@ -7,7 +7,7 @@ ENTITY ALU IS
         Operand1 : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
         Operand2 : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
         ALU_Sel : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- 3-bit signal for operation selection
-        Flags_Sel : IN STD_LOGIC_VECTOR (1 DOWNTO 0); -- 2-bit signal for flag operations
+        Flags_Sel : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- 3-bit signal for flag operations
         Result : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
         ZeroFlag : OUT STD_LOGIC;
         NegFlag : OUT STD_LOGIC;
@@ -20,14 +20,12 @@ ARCHITECTURE Behavioral OF ALU IS
 BEGIN
     PROCESS (Operand1, Operand2, ALU_Sel, Flags_Sel)
         VARIABLE TempResult : STD_LOGIC_VECTOR (15 DOWNTO 0) := (OTHERS => '0');
-        VARIABLE TempCarry : STD_LOGIC := '0';
         VARIABLE Zero : STD_LOGIC := '0';
         VARIABLE Negative : STD_LOGIC := '0';
         VARIABLE Carry : STD_LOGIC := '0';
     BEGIN
-        -- Initialize temporary result and carry
         TempResult := (OTHERS => '0');
-        TempCarry := '0';
+        Carry := '0';
 
         -- ALU Operations
         CASE ALU_Sel IS
@@ -36,16 +34,16 @@ BEGIN
             WHEN "001" => -- Add Operand1 and Operand2
                 TempResult := STD_LOGIC_VECTOR(resize(signed(Operand1), 16) + resize(signed(Operand2), 16));
                 IF (Operand1(15) = Operand2(15)) AND (Operand1(15) /= TempResult(15)) THEN
-                    TempCarry := '1';
+                    Carry := '1';
                 ELSE
-                    TempCarry := '0';
+                    Carry := '0';
                 END IF;
             WHEN "010" => -- Subtract Operand2 from Operand1
                 TempResult := STD_LOGIC_VECTOR(resize(signed(Operand1), 16) - resize(signed(Operand2), 16));
                 IF (Operand1(15) /= Operand2(15)) AND (Operand1(15) /= TempResult(15)) THEN
-                    TempCarry := '1';
+                    Carry := '1';
                 ELSE
-                    TempCarry := '0';
+                    Carry := '0';
                 END IF;
             WHEN "011" => -- Pass Operand1
                 TempResult := Operand1;
@@ -62,18 +60,20 @@ BEGIN
         ELSE
             Zero := '0';
         END IF;
+
         Negative := TempResult(15);
 
         -- Flag Operations
         CASE Flags_Sel IS
-            WHEN "00" => -- No change to flags
+            WHEN "000" => -- No change to flags
                 NULL;
-            WHEN "01" => -- Set Carry Flag
+            WHEN "001" => -- Set Carry Flag
                 Carry := '1';
-            WHEN "10" => -- Reset Zero Flag
+            WHEN "010" => -- Reset Zero Flag
                 Zero := '0';
-            WHEN "11" => -- Reset Carry and Negative Flags
+            WHEN "011" => -- Reset Carry Flag
                 Carry := '0';
+            WHEN "100" => -- Reset Negative Flag
                 Negative := '0';
             WHEN OTHERS =>
                 NULL;
