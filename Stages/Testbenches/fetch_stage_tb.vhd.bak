@@ -51,9 +51,9 @@ BEGIN
     -- Stimulus Process
     stimulus : PROCESS
     BEGIN
-        -- Reset the system
+        -- Assert reset for a longer duration
         reset <= '1';
-        WAIT FOR clk_period * 2;
+        WAIT FOR clk_period * 5; -- Longer reset duration
         reset <= '0';
 
         -- Enable PC Register and simulate instruction fetching
@@ -64,11 +64,15 @@ BEGIN
         pc_register_enable <= '0';
         WAIT FOR clk_period * 5;
 
-        pc_register_enable <= '1';
         -- End simulation
-        WAIT FOR clk_period * 50;
-
         std.env.stop;
+    END PROCESS;
+
+    -- Monitor Instruction Output
+    monitor : PROCESS
+    BEGIN
+        WAIT UNTIL rising_edge(clk);
+        REPORT "Instruction: " & std_logic_vector_to_string(instruction);
     END PROCESS;
 
 END ARCHITECTURE behavior;
