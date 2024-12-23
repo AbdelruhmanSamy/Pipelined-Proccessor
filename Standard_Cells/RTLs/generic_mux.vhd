@@ -28,8 +28,6 @@ BEGIN
     PROCESS (inputs, selected_index)
     BEGIN
         -- Extract the selected input vector from the concatenated inputs
-        FOR i IN 0 TO M - 1 LOOP
-            outputs(i) <= inputs((selected_index * M) + i); -- Select M bits based on index
-        END LOOP;
+        outputs <= inputs(((selected_index + 1) * M - 1) DOWNTO selected_index * M); -- Select M bits based on index
     END PROCESS;
 END ARCHITECTURE Structural;

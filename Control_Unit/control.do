@@ -2,11 +2,11 @@ vsim work.controlunit
 add wave -position insertpoint sim:/controlunit/*
 
 # Type 1 Instructions
-# ADD
-force -freeze sim:/controlunit/opCode 0111000 0
-run
 # INC
 force -freeze sim:/controlunit/opCode 0111001 0
+run
+# ADD
+force -freeze sim:/controlunit/opCode 0111000 0
 run
 # AND
 force -freeze sim:/controlunit/opCode 0111010 0
