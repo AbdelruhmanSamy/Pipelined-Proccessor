@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor
 Ealu
-Z1 w1734901706
+Z1 w1734914345
 Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VEOXL@ze=d_92i8z07DWhn2
 !s100 D9G[YA:m14LoFZQhlPTWM1
 Z7 OV;C;10.5b;63
 32
-Z8 !s110 1734913801
+Z8 !s110 1734921866
 !i10b 1
-Z9 !s108 1734913801.000000
+Z9 !s108 1734921866.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/ALU.vhd|
 Z11 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/ALU.vhd|
 !i113 1
@@ -34,11 +34,11 @@ Abehavioral
 R2
 R3
 R4
-Z14 DEx4 work 3 alu 0 22 EOXL@ze=d_92i8z07DWhn2
+DEx4 work 3 alu 0 22 EOXL@ze=d_92i8z07DWhn2
 l20
 L18
-Z15 Vbf[kzP84Dj]dO40fVBB@61
-Z16 !s100 4FBoPKf=2Sh=k:AOa?QYl0
+Vbf[kzP84Dj]dO40fVBB@61
+!s100 4FBoPKf=2Sh=k:AOa?QYl0
 R7
 32
 R8
@@ -50,24 +50,24 @@ R11
 R12
 R13
 Ealu_tb
-Z17 w1734855880
+R1
 R2
 R3
 R4
 R0
-Z18 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd
-Z19 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd
+Z14 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd
+Z15 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd
 l0
 L5
-VX7NP96INFHP>OzU<k=IG23
-!s100 ODWg0;25MRFV::mbU]DOc1
+VA?Rkzz93^h^2o3F`6DIUR2
+!s100 Uk[2O38OaVKQXmn<`STS>3
 R7
 32
 R8
 !i10b 1
 R9
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd|
-Z21 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd|
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd|
+Z17 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/ALU_tb.vhd|
 !i113 1
 R12
 R13
@@ -75,51 +75,51 @@ Abehavioral
 R2
 R3
 R4
-DEx4 work 6 alu_tb 0 22 X7NP96INFHP>OzU<k=IG23
-l34
-L9
-VI7[lNa6gZWAX`29Z_zV;J2
-!s100 5FQ`E1SB__<2?dIC?X3AR3
+DEx4 work 6 alu_tb 0 22 A?Rkzz93^h^2o3F`6DIUR2
+l31
+L8
+V2CV1DbOVF;gJXZf2JhCW?1
+!s100 dNIgo^zfTZ`jB@Mz6>90`2
 R7
 32
 R8
 !i10b 1
 R9
-R20
-R21
+R16
+R17
 !i113 1
 R12
 R13
 Edata_memory
-Z22 w1734899157
+Z18 w1734899157
 R2
-Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z24 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
-Z25 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z19 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z20 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z21 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R3
 R4
 R0
-Z26 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd
-Z27 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd
+Z22 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd
+Z23 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd
 l0
 L8
 V8MBP^Vz[k[b]A][QI@UAn2
 !s100 50Ek<;FHm2zOE5i<>?K;M3
 R7
 32
-Z28 !s110 1734913800
+Z24 !s110 1734921864
 !i10b 1
-Z29 !s108 1734913800.000000
-Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd|
-Z31 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd|
+Z25 !s108 1734921864.000000
+Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd|
+Z27 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory.vhd|
 !i113 1
 R12
 R13
 Aarch_data_memory
 R2
-R23
-R24
-R25
+R19
+R20
+R21
 R3
 R4
 DEx4 work 11 data_memory 0 22 8MBP^Vz[k[b]A][QI@UAn2
@@ -129,33 +129,116 @@ VSM:]<IPnBjSD6Hj=iH;oB1
 !s100 aoJEcRB9Zmo]IAdVLK``=3
 R7
 32
-R28
+R24
 !i10b 1
-R29
-R30
-R31
+R25
+R26
+R27
 !i113 1
 R12
 R13
-Efetch_stage
-Z32 w1734912425
+Edecode_stage
+Z28 w1734921271
 R2
 R3
 R4
 R0
-Z33 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd
-Z34 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd
+Z29 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/decode_stage.vhd
+Z30 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/decode_stage.vhd
+l0
+L5
+VMn2VLiZAR[G[R@1;BG_V53
+!s100 7]Z3zeMoKED75aRlVLL@40
+R7
+32
+R8
+!i10b 1
+R9
+Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/decode_stage.vhd|
+Z32 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/decode_stage.vhd|
+!i113 1
+R12
+R13
+Adecode_stage_architecture
+R2
+R3
+R4
+DEx4 work 12 decode_stage 0 22 Mn2VLiZAR[G[R@1;BG_V53
+l69
+L25
+VVV2I9D`IJdYZD[k4>77^^1
+!s100 4I]gaIVHzYJZKR^kZHV6=2
+R7
+32
+R8
+!i10b 1
+R9
+R31
+R32
+!i113 1
+R12
+R13
+Edecode_stage_tb
+Z33 w1734921853
+R2
+R3
+R4
+R0
+Z34 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/decode_stage_tb.vhd
+Z35 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/decode_stage_tb.vhd
+l0
+L5
+VU4>oj=Ge6BIBbYS4f?H:<2
+!s100 dimR1JYK1hoQE>Q0;4@[P2
+R7
+32
+R8
+!i10b 1
+R9
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/decode_stage_tb.vhd|
+Z37 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/decode_stage_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+Z38 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+R2
+R3
+R4
+Z39 DEx4 work 15 decode_stage_tb 0 22 U4>oj=Ge6BIBbYS4f?H:<2
+l46
+L8
+VE_ES^QFoY<JnFgf]JfmA71
+!s100 B]=cOnjK<SnkBVUQ4R0b=1
+R7
+32
+R8
+!i10b 1
+R9
+R36
+R37
+!i113 1
+R12
+R13
+Efetch_stage
+Z40 w1734917537
+R2
+R3
+R4
+R0
+Z41 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd
+Z42 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd
 l0
 L5
 V6`1ahR=SbFW5;Ygm2XF5P3
 !s100 >7CkO[b_42QlS_FiDEUMX3
 R7
 32
-R28
+R24
 !i10b 1
-R29
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd|
-Z36 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd|
+R25
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd|
+Z44 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/RTLs/fetch_stage.vhd|
 !i113 1
 R12
 R13
@@ -170,11 +253,11 @@ V<M>Qan2gFhcbZbY@<7h_E2
 !s100 4ibRBQTlkZVl[F23P6S8W1
 R7
 32
-R28
+R24
 !i10b 1
-R29
-R35
-R36
+R25
+R43
+R44
 !i113 1
 R12
 R13
@@ -184,8 +267,8 @@ R2
 R3
 R4
 R0
-Z37 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd
-Z38 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd
+Z45 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd
+Z46 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd
 l0
 L5
 VJ`4FgM69;0BT6DD:8Wk8;2
@@ -195,14 +278,14 @@ R7
 !s110 1734910706
 !i10b 1
 !s108 1734910706.000000
-Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd|
-Z40 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd|
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd|
+Z48 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Stages/Testbenches/fetch_stage_tb.vhd|
 !i113 1
 R12
 R13
 Abehavior
-w1734913782
-Z41 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+R1
+R38
 R2
 R3
 R4
@@ -213,33 +296,33 @@ VMgL:Lg@3fc=nB`DYJcoo60
 !s100 GMMUg22@ClFUK[P[4U<[91
 R7
 32
-R28
+Z49 !s110 1734921865
 !i10b 1
-R29
-R39
-R40
+Z50 !s108 1734921865.000000
+R47
+R48
 !i113 1
 R12
 R13
 Egeneral_register
-R22
+R18
 R2
 R3
 R4
 R0
-Z42 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd
-Z43 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd
+Z51 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd
+Z52 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd
 l0
 L5
 VX25>aFW;]O:KnDe5oYLj@2
 !s100 WZN1[iM7<O6fik7lV1kEd0
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd|
-Z45 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd|
+R50
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd|
+Z54 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register.vhd|
 !i113 1
 R12
 R13
@@ -247,40 +330,40 @@ Abehavioral
 R2
 R3
 R4
-Z46 DEx4 work 16 general_register 0 22 X25>aFW;]O:KnDe5oYLj@2
+Z55 DEx4 work 16 general_register 0 22 X25>aFW;]O:KnDe5oYLj@2
 l19
 L17
 Vg9UF^l3DMYXoBXm373aDm0
 !s100 oYc:bo6:[N0gXSUP[8S]S3
 R7
 32
-R28
+R49
 !i10b 1
-R29
-R44
-R45
+R50
+R53
+R54
 !i113 1
 R12
 R13
 Egeneral_register_file
-Z47 w1734900664
+R1
 R2
 R3
 R4
 R0
-Z48 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd
-Z49 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd
+Z56 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd
+Z57 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd
 l0
 L5
 VaZFVLj?Z`YBTRFo5^FQUa3
 !s100 I4FKPWf0EnCX8LV^ij]n81
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd|
-Z51 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd|
+R50
+Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd|
+Z59 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/register_file.vhd|
 !i113 1
 R12
 R13
@@ -288,46 +371,46 @@ Abehavioral
 R2
 R3
 R4
-Z52 DEx4 work 21 general_register_file 0 22 aZFVLj?Z`YBTRFo5^FQUa3
+Z60 DEx4 work 21 general_register_file 0 22 aZFVLj?Z`YBTRFo5^FQUa3
 l21
 L18
 V=c`PPROP<a]CG]BIP41o30
 !s100 fD=ZN<>6a@V;CA5[<dnZM2
 R7
 32
-R28
+R49
 !i10b 1
-R29
 R50
-R51
+R58
+R59
 !i113 1
 R12
 R13
 Egeneral_register_file_tb
-Z53 w1734354732
+Z61 w1734354732
 R2
 R3
 R4
 R0
-Z54 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd
-Z55 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd
+Z62 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd
+Z63 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd
 l0
 L5
 VE6IS[4ER9zm4D^=KlQh8I2
 !s100 I^_[h7F]RTYkhi9Yd3Joz3
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd|
-Z57 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd|
+R50
+Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd|
+Z65 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_file_tb.vhd|
 !i113 1
 R12
 R13
 Abehavioral
-R41
-R52
+R38
+R60
 R2
 R3
 R4
@@ -338,39 +421,39 @@ V708X;Gabao@R6<kYNJY940
 !s100 h^a@VU4iT8lcUhU4[ZX[Q3
 R7
 32
-R28
+R49
 !i10b 1
-R29
-R56
-R57
+R50
+R64
+R65
 !i113 1
 R12
 R13
 Egeneral_register_tb
-R53
+R61
 R2
 R3
 R4
 R0
-Z58 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd
-Z59 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd
+Z66 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd
+Z67 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd
 l0
 L5
 VlXWU=V>6IL24KgESVC<a=1
 !s100 <HYnI@`j;:^Gm]faJG?`13
 R7
 32
-R8
+R49
 !i10b 1
-R29
-Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd|
-Z61 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd|
+R50
+Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd|
+Z69 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/Testbenches/register_tb.vhd|
 !i113 1
 R12
 R13
 Abehavioral
-R41
-R46
+R38
+R55
 R2
 R3
 R4
@@ -381,33 +464,33 @@ V``EKHUDBNgnGG]]RWY[^O1
 !s100 PD8F7<26?2^dOb5`CHgeQ0
 R7
 32
-R8
+R49
 !i10b 1
-R29
-R60
-R61
+R50
+R68
+R69
 !i113 1
 R12
 R13
 Egeneric_mux
-R22
+R1
 R2
 R3
 R4
 R0
-Z62 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd
-Z63 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd
+Z70 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd
+Z71 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd
 l0
 L5
 VfSiQCW?Kb[XcB4Ba1lF@m0
 !s100 K:=biQC78O`MbH2CAJoQ10
 R7
 32
-R8
+R49
 !i10b 1
-R9
-Z64 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd|
-Z65 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd|
+R50
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd|
+Z73 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/generic_mux.vhd|
 !i113 1
 R12
 R13
@@ -422,33 +505,33 @@ VWlYTCW=8JM[U4ZTdjVHDN0
 !s100 ^RoC3RgLUDdiNAR<nE?_X0
 R7
 32
-R8
+R49
 !i10b 1
-R9
-R64
-R65
+R50
+R72
+R73
 !i113 1
 R12
 R13
 Egeneric_mux_tb
-Z66 w1734899167
+R1
 R2
 R3
 R4
 R0
-Z67 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd
-Z68 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd
+Z74 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd
+Z75 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd
 l0
 L5
 VAWOaYD[64WQghi;8E5He41
 !s100 >_KK0N::N4zQ?W:G5Io7U0
 R7
 32
-R8
+R49
 !i10b 1
-R9
-Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd|
-Z70 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd|
+R50
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd|
+Z77 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/Testbenches/generic_mux_tb.vhd|
 !i113 1
 R12
 R13
@@ -463,33 +546,112 @@ V?[TkmD4T<Mo[W[g0cE5_`3
 !s100 65aAPYWI7<f:0Gj]TX9`U3
 R7
 32
+R49
+!i10b 1
+R50
+R76
+R77
+!i113 1
+R12
+R13
+Einput_port
+Z78 w1734917648
+R3
+R4
+R0
+Z79 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/input_port.vhd
+Z80 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/input_port.vhd
+l0
+L4
+VzOA?ag08RPbENMh5>2[F80
+!s100 `Hl5SanfHk@UZ@Y<IM5YW1
+R7
+32
 R8
 !i10b 1
 R9
-R69
-R70
+Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/input_port.vhd|
+Z82 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/input_port.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R3
+R4
+DEx4 work 10 input_port 0 22 zOA?ag08RPbENMh5>2[F80
+l22
+L16
+VhkIfVj=I^2HKJ]e7bVCbJ1
+!s100 C_E=VLm>5P?d9]U^T36O03
+R7
+32
+R8
+!i10b 1
+R9
+R81
+R82
+!i113 1
+R12
+R13
+Einput_port_tb
+Z83 w1734917982
+R3
+R4
+R0
+Z84 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/input_port_tb.vhd
+Z85 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/input_port_tb.vhd
+l0
+L4
+VnXd1>FNA73JNWb8@UgBeZ0
+!s100 FfdVbI2g?]lBAO?lTV;Im0
+R7
+32
+R8
+!i10b 1
+R9
+Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/input_port_tb.vhd|
+Z87 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/input_port_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R38
+R3
+R4
+DEx4 work 13 input_port_tb 0 22 nXd1>FNA73JNWb8@UgBeZ0
+l28
+L7
+VZb0IKBlfkL3G[f2]67KJG1
+!s100 6GmFZ_m@zk3K?UG183TGe3
+R7
+32
+R8
+!i10b 1
+R9
+R86
+R87
 !i113 1
 R12
 R13
 Einstruction_memory
-Z71 w1734913752
+R1
 R2
 R3
 R4
 R0
-Z72 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd
-Z73 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd
+Z88 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd
+Z89 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd
 l0
 L6
 VZ:Ld?hah5;EUS]8<B>N>A0
 !s100 4@o?2XYLF;`]d;AnnJ?9K0
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd|
-Z75 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd|
+R50
+Z90 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd|
+Z91 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory.vhd|
 !i113 1
 R12
 R13
@@ -504,32 +666,32 @@ V5l>OES;AKh4DQo[HIz3NY1
 !s100 fn79gb`8CV<9^^[HVe04S1
 R7
 32
-R28
+R49
 !i10b 1
-R29
-R74
-R75
+R50
+R90
+R91
 !i113 1
 R12
 R13
 En_bit_adder
-R22
+R1
 R3
 R4
 R0
-Z76 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd
-Z77 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd
+Z92 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd
+Z93 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd
 l0
 L4
 V33ZioVYNMcB9iGjWNHc7b1
 !s100 n[1QS6;hl_VRPhXiLBdB93
 R7
 32
-R8
+R49
 !i10b 1
-R9
-Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd|
-Z79 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd|
+R50
+Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd|
+Z95 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/n_bit_adder.vhd|
 !i113 1
 R12
 R13
@@ -543,21 +705,21 @@ V]2z?XW7M8`AldUWN4?5M;3
 !s100 h7=V6McYCAM3Oz7je:F`D0
 R7
 32
-R8
+R49
 !i10b 1
-R9
-R78
-R79
+R50
+R94
+R95
 !i113 1
 R12
 R13
 Eone_bit_adder
-R22
+R1
 R3
 R4
 R0
-Z80 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd
-Z81 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd
+Z96 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd
+Z97 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd
 l0
 L4
 V@TY8zOkab7eES=U^T2=@G3
@@ -567,8 +729,8 @@ R7
 R8
 !i10b 1
 R9
-Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd|
-Z83 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd|
+Z98 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd|
+Z99 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Standard_Cells/RTLs/one_bit_adder.vhd|
 !i113 1
 R12
 R13
@@ -585,18 +747,18 @@ R7
 R8
 !i10b 1
 R9
-R82
-R83
+R98
+R99
 !i113 1
 R12
 R13
 Epc_handler
-Z84 w1734906084
+R1
 R3
 R4
 R0
-Z85 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd
-Z86 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd
+Z100 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd
+Z101 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd
 l0
 L4
 VJJ0;Sd@SDg8H[1mN5kaL53
@@ -606,8 +768,8 @@ R7
 R8
 !i10b 1
 R9
-Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd|
-Z88 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd|
+Z102 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd|
+Z103 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/RTLs/pc_handler.vhd|
 !i113 1
 R12
 R13
@@ -624,29 +786,29 @@ R7
 R8
 !i10b 1
 R9
-R87
-R88
+R102
+R103
 !i113 1
 R12
 R13
 Epc_handler_tb
-Z89 w1734901495
+Z104 w1734901495
 R3
 R4
 R0
-Z90 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd
-Z91 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd
+Z105 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd
+Z106 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd
 l0
 L4
 Vo_kD=?fI_bQPNmNJb^6>62
 !s100 [zCbM9>JSFWf?cNGa^9SF1
 R7
 32
-Z92 !s110 1734901506
+Z107 !s110 1734901506
 !i10b 1
-Z93 !s108 1734901506.000000
-Z94 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd|
-Z95 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd|
+Z108 !s108 1734901506.000000
+Z109 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd|
+Z110 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/components/Testbenches/PC_Handler_tb.vhd|
 !i113 1
 R12
 R13
@@ -660,42 +822,42 @@ V:OJ_K@DfITzNiAc5hbSE52
 !s100 <BO@CzdL0;_Z5Vk>8@F6e3
 R7
 32
-R92
+R107
 !i10b 1
-R93
-R94
-R95
+R108
+R109
+R110
 !i113 1
 R12
 R13
 Etb_data_memory
-R17
+Z111 w1734855880
 R2
-R23
-R24
+R19
+R20
 R3
 R4
 R0
-Z96 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd
-Z97 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd
+Z112 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd
+Z113 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd
 l0
 L6
 ViOkc]1aVGbLgY]TAB;A>H2
 !s100 @FdjL=OJ;HXhP?VVjVQcD0
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z98 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd|
-Z99 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd|
+R50
+Z114 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd|
+Z115 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/data_memory_tb.vhd|
 !i113 1
 R12
 R13
 Abehavior
 R2
-R23
-R24
+R19
+R20
 R3
 R4
 DEx4 work 14 tb_data_memory 0 22 iOkc]1aVGbLgY]TAB;A>H2
@@ -705,42 +867,42 @@ VN_LlSzYjYQiWW`=:oaSiX1
 !s100 jT1UmKTdTnBmhE0]OIYh>1
 R7
 32
-R28
+R49
 !i10b 1
-R29
-R98
-R99
+R50
+R114
+R115
 !i113 1
 R12
 R13
 Etb_instruction_memory
-R22
+R18
 R2
-R23
-R24
+R19
+R20
 R3
 R4
 R0
-Z100 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd
-Z101 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd
+Z116 8D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd
+Z117 FD:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd
 l0
 L6
 VJ?8ol11TM316c9:PI<^Al0
 !s100 Gl_VVMGhPJcG;6[5hXnNS0
 R7
 32
-R28
+R49
 !i10b 1
-R29
-Z102 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd|
-Z103 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd|
+R50
+Z118 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd|
+Z119 !s107 D:/CMP/Third Year/Computer Architecture/MIPS-Pipelined-Proccessor/Memory_Elements/RTLs/instruction_memory_tb.vhd|
 !i113 1
 R12
 R13
 Abehavior
 R2
-R23
-R24
+R19
+R20
 R3
 R4
 DEx4 work 21 tb_instruction_memory 0 22 J?8ol11TM316c9:PI<^Al0
@@ -750,11 +912,11 @@ VQzog>dH]nFW:KU7Xh8fLn1
 !s100 OWF9aUcfTWid0=dgF;0Ml3
 R7
 32
-R28
+R49
 !i10b 1
-R29
-R102
-R103
+R50
+R118
+R119
 !i113 1
 R12
 R13
