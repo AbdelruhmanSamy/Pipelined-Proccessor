@@ -10,7 +10,6 @@ ENTITY decode_stage IS
     PORT (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        fetched_opcode : IN STD_LOGIC_VECTOR(6 DOWNTO 0);
         fetched_instruction : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
         reg_write : IN STD_LOGIC;
         write_back_address : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
@@ -24,7 +23,7 @@ END ENTITY decode_stage;
 
 ARCHITECTURE decode_stage_architecture OF decode_stage IS
 
-    COMPONENT register_file IS
+    COMPONENT general_register_file IS
         GENERIC (
             REGISTER_SIZE : INTEGER := REGISTER_SIZE;
             REGISTER_NUMBER : INTEGER := REGISTER_NUMBER
@@ -62,19 +61,23 @@ ARCHITECTURE decode_stage_architecture OF decode_stage IS
         );
     END COMPONENT;
 
+    SIGNAL temp_fetched_instruction : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
+
     SIGNAL temp_data_1 : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
     SIGNAL input_mux : STD_LOGIC_VECTOR(2 * REGISTER_SIZE - 1 DOWNTO 0);
     SIGNAL temp_input_port_output : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
 
 BEGIN
 
-    register_file_instance : register_file
+    temp_fetched_instruction <= fetched_instruction;
+
+    register_file_instance : general_register_file
     PORT MAP(
         write_enable => reg_write,
         clk => clk,
         reset => reset,
-        read_address1 => fetched_instruction(2 DOWNTO 0),
-        read_address2 => fetched_instruction(5 DOWNTO 3),
+        read_address1 => temp_fetched_instruction(2 DOWNTO 0),
+        read_address2 => temp_fetched_instruction(5 DOWNTO 3),
         write_address => write_back_address,
         write_data => write_back_data,
         read_data1 => temp_data_1,
