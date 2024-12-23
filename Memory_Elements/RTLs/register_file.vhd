@@ -17,7 +17,7 @@ END ENTITY general_register_file;
 
 ARCHITECTURE Behavioral OF general_register_file IS
     TYPE register_array IS ARRAY(NATURAL RANGE <>) OF STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
-    SIGNAL general_register : register_array(0 TO REGISTER_NUMBER - 1);
+    SIGNAL general_register : register_array(0 TO REGISTER_NUMBER - 1) := (OTHERS => (OTHERS => '0'));
 BEGIN
 
     read_data1 <= general_register(to_integer(unsigned(read_address1)));
