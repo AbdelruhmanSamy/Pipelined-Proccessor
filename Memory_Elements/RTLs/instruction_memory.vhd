@@ -7,7 +7,9 @@ ENTITY instruction_memory IS
     PORT (
         reset : IN STD_LOGIC;
         Address : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
-        DataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+        DataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Sixth_DataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        Eigth_DataOut : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END ENTITY instruction_memory;
 
@@ -55,6 +57,8 @@ BEGIN
 
         -- Output data from memory
         DataOut <= Ram(to_integer(unsigned(Address)));
+        Sixth_DataOut <= Ram(5);
+        Eigth_DataOut <= Ram(6);
     END PROCESS;
 
 END ARCHITECTURE arch_instruction_memory;
