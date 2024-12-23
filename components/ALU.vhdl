@@ -6,8 +6,9 @@ ENTITY ALU IS
     PORT (
         Operand1 : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
         Operand2 : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
-        ALU_Sel : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- 3-bit signal for operation selection
-        Flags_Sel : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- 3-bit signal for flag operations
+        ALU_Sel : IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+        Flags_Data : IN STD_LOGIC_VECTOR (2 DOWNTO 0); -- passed as Zero &  Neg & Carry
+        Flags_Sel : IN STD_LOGIC;
         Result : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
         ZeroFlag : OUT STD_LOGIC;
         NegFlag : OUT STD_LOGIC;
@@ -29,8 +30,9 @@ BEGIN
 
         -- ALU Operations
         CASE ALU_Sel IS
-            WHEN "000" => -- NOT Operand1
-                TempResult := NOT Operand1;
+            WHEN "000" => -- Pass Operand1
+                TempResult := Operand1;
+
             WHEN "001" => -- Add Operand1 and Operand2
                 TempResult := STD_LOGIC_VECTOR(resize(signed(Operand1), 16) + resize(signed(Operand2), 16));
                 IF (Operand1(15) = Operand2(15)) AND (Operand1(15) /= TempResult(15)) THEN
@@ -45,14 +47,20 @@ BEGIN
                 ELSE
                     Carry := '0';
                 END IF;
-            WHEN "011" => -- Pass Operand1
-                TempResult := Operand1;
-            WHEN "100" => -- Pass Operand2
-                TempResult := Operand2;
-            WHEN "101" => -- AND Operand1 and Operand2
+            WHEN "011" => -- AND Operand1 and Operand2
                 TempResult := Operand1 AND Operand2;
+
+            WHEN "100" => -- NOT Operand1
+                TempResult := NOT Operand1;
             WHEN OTHERS =>
                 TempResult := (OTHERS => '0');
+        END CASE;
+
+        CASE ALU_SEl IS
+            WHEN "101" => -- Set Carry Flag
+                Carry := '1';
+            WHEN OTHERS =>
+                NULL;
         END CASE;
 
         IF to_integer(signed(TempResult)) = 0 THEN
@@ -65,16 +73,10 @@ BEGIN
 
         -- Flag Operations
         CASE Flags_Sel IS
-            WHEN "000" => -- No change to flags
-                NULL;
-            WHEN "001" => -- Set Carry Flag
-                Carry := '1';
-            WHEN "010" => -- Reset Zero Flag
-                Zero := '0';
-            WHEN "011" => -- Reset Carry Flag
-                Carry := '0';
-            WHEN "100" => -- Reset Negative Flag
-                Negative := '0';
+            WHEN '1' =>
+                Zero := Flags_Data(0);
+                Negative := Flags_Data(1);
+                Carry := Flags_Data(2);
             WHEN OTHERS =>
                 NULL;
         END CASE;
