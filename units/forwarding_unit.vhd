@@ -1,20 +1,43 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
-USE IEEE.numeric_std.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
 
-ENTITY forwarding_unit IS
-    PORT (
-        Rsrc1 : in std_logic_vector(15 downto 0);
-        Rsrc2 : in std_logic_vector(15 downto 0);
-        memory_address : in std_logic_vector(15 downto 0);
-        WB_data : in std_logic_vector(15 downto 0);
-       
-        FU_signal : out std_logic
-    );
-END forwarding_unit;
-ARCHITECTURE forwarding_unit_architecture OF forwarding_unit IS
+ENTITY ForwardingUnit IS
+  PORT (
+    ID_EX_Rsrc1 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    ID_EX_Rsrc2 : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    EX_MEM_Rdst : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    MEM_WB_Rdst : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    EX_MEM_regWrite : IN STD_LOGIC;
+    MEM_WB_regWrite : IN STD_LOGIC;
+    ForwardA : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+    ForwardB : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+  );
+END ForwardingUnit;
+
+ARCHITECTURE a_ForwardingUnit OF ForwardingUnit IS
 BEGIN
+  -- ForwardA logic
+  PROCESS (EX_MEM_regWrite, EX_MEM_Rdst, MEM_WB_regWrite, MEM_WB_Rdst, ID_EX_Rsrc1)
+  BEGIN
+    IF EX_MEM_regWrite = '1' AND EX_MEM_Rdst = ID_EX_Rsrc1 THEN
+      ForwardA <= "01";  -- Forward from EX stage
+    ELSIF MEM_WB_regWrite = '1' AND MEM_WB_Rdst = ID_EX_Rsrc1 THEN
+      ForwardA <= "10";  -- Forward from MEM stage
+    ELSE
+      ForwardA <= "00";  -- No forwarding
+    END IF;
+  END PROCESS;
+ 
+  -- ForwardB logic
+  PROCESS (EX_MEM_regWrite, EX_MEM_Rdst, MEM_WB_regWrite, MEM_WB_Rdst, ID_EX_Rsrc2)
+  BEGIN
+    IF EX_MEM_regWrite = '1' AND EX_MEM_Rdst = ID_EX_Rsrc2 THEN
+      ForwardB <= "01";  -- Forward from EX stage
+    ELSIF MEM_WB_regWrite = '1' AND MEM_WB_Rdst = ID_EX_Rsrc2 THEN
+      ForwardB <= "10";  -- Forward from MEM stage
+    ELSE
+      ForwardB <= "00";  -- No forwarding
+    END IF;
+  END PROCESS;
 
-    -- TODO: The design doesn't show any specific logic or any other output signals.
-    FU_signal <= '1'; -- Where to go 
-END forwarding_unit_architecture;
+END a_ForwardingUnit;
