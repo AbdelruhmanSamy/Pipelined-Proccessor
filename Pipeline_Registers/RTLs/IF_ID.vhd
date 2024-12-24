@@ -1,0 +1,48 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY IF_ID_Register IS
+    PORT (
+        CLK : IN STD_LOGIC;
+        RESET : IN STD_LOGIC;
+        WRITE_EN : IN STD_LOGIC;
+        FLUSH_IN : IN STD_LOGIC;
+        PC_IN : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        INSTR_IN : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        FLUSH_OUT : OUT STD_LOGIC;
+        PC_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+        INSTR_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+    );
+END IF_ID_Register;
+
+ARCHITECTURE Behavioral OF IF_ID_Register IS
+
+    SIGNAL PC_REG : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL INSTR_REG : STD_LOGIC_VECTOR(15 DOWNTO 0);
+    SIGNAL FLUSH_REG : STD_LOGIC;
+
+BEGIN
+
+    PC_OUT <= PC_REG;
+    INSTR_OUT <= INSTR_REG;
+    FLUSH_OUT <= FLUSH_REG;
+
+    PROCESS (CLK, RESET)
+    BEGIN
+        IF RESET = '1' THEN
+
+            PC_REG <= (OTHERS => '0');
+            INSTR_REG <= (OTHERS => '0');
+            FLUSH_REG <= '0';
+        ELSIF rising_edge(CLK) THEN
+            IF WRITE_EN = '1' THEN
+
+                PC_REG <= PC_IN;
+                INSTR_REG <= INSTR_IN;
+                FLUSH_REG <= FLUSH_IN;
+            END IF;
+        END IF;
+    END PROCESS;
+
+END Behavioral;
