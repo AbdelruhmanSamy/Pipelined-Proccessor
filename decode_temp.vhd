@@ -2,7 +2,7 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.NUMERIC_STD.ALL;
 
-ENTITY decode_stage IS
+ENTITY decode_stage_temp IS
     GENERIC (
         REGISTER_SIZE : INTEGER := 16;
         REGISTER_NUMBER : INTEGER := 8
@@ -17,7 +17,7 @@ ENTITY decode_stage IS
         input_port_data : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
 
         -- input signals from control unit
-        IN_PORT_IN : IN STD_LOGIC;
+        IN_PORT_IN : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 
         -- TODO: integrate JMP and CALL instructions
         -- JMP_IN : IN STD_LOGIC;
@@ -29,6 +29,7 @@ ENTITY decode_stage IS
 
     );
 END ENTITY decode_stage;
+
 ARCHITECTURE decode_stage_architecture OF decode_stage IS
 
     COMPONENT general_register_file IS
@@ -49,8 +50,8 @@ ARCHITECTURE decode_stage_architecture OF decode_stage IS
             DATA_SIZE : INTEGER := 16
         );
         PORT (
-            clk : IN STD_LOGIC;
-            reset : IN STD_LOGIC;
+            clk : IN STD_LOGIC; -- Clock signal
+            reset : IN STD_LOGIC; -- Reset signal
             data_in : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
             data_out : OUT STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0)
         );
@@ -72,19 +73,16 @@ ARCHITECTURE decode_stage_architecture OF decode_stage IS
     SIGNAL temp_data_1 : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
     SIGNAL input_mux : STD_LOGIC_VECTOR(2 * REGISTER_SIZE - 1 DOWNTO 0);
     SIGNAL temp_input_port_output : STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
-    SIGNAL sel_vector : STD_LOGIC_VECTOR(0 DOWNTO 0); -- New signal for type conversion
 
 BEGIN
-    -- Convert STD_LOGIC to STD_LOGIC_VECTOR
-    sel_vector(0) <= IN_PORT_IN;
-
+    -- Component instantiations with proper signal assignments
     register_file_instance : general_register_file
     PORT MAP(
         write_enable => reg_write,
         clk => clk,
         reset => reset,
-        read_address1 => fetched_instruction(2 DOWNTO 0),
-        read_address2 => fetched_instruction(5 DOWNTO 3),
+        read_address1 => fetched_instruction(2 DOWNTO 0), -- Use direct input instead of temp signal
+        read_address2 => fetched_instruction(5 DOWNTO 3), -- Use direct input instead of temp signal
         write_address => write_back_address,
         write_data => write_back_data,
         read_data1 => temp_data_1,
@@ -104,7 +102,7 @@ BEGIN
     input_port_mux_instance : generic_mux
     PORT MAP(
         inputs => input_mux,
-        sel => sel_vector, -- Use the converted signal
+        sel => IN_PORT_IN,
         outputs => read_data_1
     );
 

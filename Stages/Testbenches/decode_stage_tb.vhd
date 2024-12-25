@@ -20,10 +20,19 @@ ARCHITECTURE behavior OF decode_stage_tb IS
             reg_write : IN STD_LOGIC;
             write_back_address : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
             write_back_data : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
-            input_for_input_port : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
-            is_input_port : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+            input_port_data : IN STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
+
+            -- input signals from control unit
+            IN_PORT_IN : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+
+            -- TODO: integrate JMP and CALL instructions
+            -- JMP_IN : IN STD_LOGIC;
+            -- CALL_IN : IN STD_LOGIC;
+
+            -- Outputs
             read_data_1 : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0);
             read_data_2 : OUT STD_LOGIC_VECTOR(REGISTER_SIZE - 1 DOWNTO 0)
+
         );
     END COMPONENT;
 
@@ -56,8 +65,8 @@ BEGIN
         reg_write => reg_write,
         write_back_address => write_back_address,
         write_back_data => write_back_data,
-        input_for_input_port => input_for_input_port,
-        is_input_port => is_input_port,
+        input_port_data => input_for_input_port,
+        IN_PORT_IN => is_input_port,
         read_data_1 => read_data_1,
         read_data_2 => read_data_2
     );
@@ -88,7 +97,7 @@ BEGIN
 
         ASSERT read_data_1 = X"0000" AND read_data_2 = X"0000"
         REPORT "Test Case 1 Failed: Register write not reflected in read data."
-            SEVERITY ERROR;
+        SEVERITY ERROR;
 
         -- Test Case 2: Read data from register file
         fetched_instruction <= X"0001";
@@ -97,7 +106,7 @@ BEGIN
 
         ASSERT read_data_1 = X"00FF"
         REPORT "Test Case 2 Failed: Read data 1 does not match expected value."
-            SEVERITY ERROR;
+        SEVERITY ERROR;
 
         -- Test Case 3: Test input port functionality
         input_for_input_port <= X"AAAA";
@@ -106,7 +115,7 @@ BEGIN
 
         ASSERT read_data_1 = X"AAAA"
         REPORT "Test Case 3 Failed: Input port data not reflected in read data 1."
-            SEVERITY ERROR;
+        SEVERITY ERROR;
 
         -- Test Case 4: Test mux selection
         is_input_port <= "0";
@@ -114,7 +123,7 @@ BEGIN
 
         ASSERT read_data_1 = X"00FF"
         REPORT "Test Case 4 Failed: Mux did not select register file data."
-            SEVERITY ERROR;
+        SEVERITY ERROR;
 
         -- Stop simulation
         std.env.stop;

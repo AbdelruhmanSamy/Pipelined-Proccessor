@@ -8,7 +8,6 @@ ENTITY writeback_stage IS
         WB_data_in : IN STD_LOGIC_VECTOR(15 DOWNTO 0); -- data from memory
         WB_address : IN STD_LOGIC_VECTOR(15 DOWNTO 0); -- data from ALU or immediate value
         Rdst_in : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        WB_data : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         WB_data_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         Rdst_out : OUT STD_LOGIC_VECTOR(2 DOWNTO 0)
     );
@@ -51,8 +50,7 @@ BEGIN
         outputs => mux_output
     );
 
-    WB_data_out <= WB_data_in;
-    WB_data <= mux_output;
+    WB_data_out <= mux_output;
     Rdst_out <= Rdst_in;
 
 END ARCHITECTURE Behavioral;

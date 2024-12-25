@@ -1,3 +1,10 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+ENTITY fetch_stage_tb IS
+END fetch_stage_tb;
+
 ARCHITECTURE behavior OF fetch_stage_tb IS
 
     -- Component declaration for the Unit Under Test (UUT)
@@ -10,22 +17,26 @@ ARCHITECTURE behavior OF fetch_stage_tb IS
             pc_register_enable : IN STD_LOGIC;
             index : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
             reset : IN STD_LOGIC;
-            is_INT : IN STD_LOGIC;
-            is_RTI : IN STD_LOGIC;
-            is_HLT : IN STD_LOGIC;
-            is_JCond : IN STD_LOGIC;
-            is_JMP : IN STD_LOGIC;
-            is_CALL : IN STD_LOGIC;
-            is_RET : IN STD_LOGIC;
-            is_EmptySP : IN STD_LOGIC;
-            is_InvMemAddress : IN STD_LOGIC;
-            is_NOP : IN STD_LOGIC;
-            address_to_jump : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-            popped_address_to_jump : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-            first_mem_address : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-            fourth_mem_address : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-            second_mem_address : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-            instruction : OUT STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0)
+            INT : IN STD_LOGIC;
+            RTI : IN STD_LOGIC;
+            HLT : IN STD_LOGIC;
+            JCond : IN STD_LOGIC;
+            JMP : IN STD_LOGIC;
+            CALL : IN STD_LOGIC;
+            RET : IN STD_LOGIC;
+            empty_SP : IN STD_LOGIC;
+            invalid_mem_address : IN STD_LOGIC;
+            NOP : IN STD_LOGIC;
+            Rsrc1 : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+            DM_SP : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+            IM_0 : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+            IM_4 : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+            IM_2 : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+
+            -- Outputs
+            instruction : OUT STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+            PC_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+
         );
     END COMPONENT;
 
@@ -50,7 +61,7 @@ ARCHITECTURE behavior OF fetch_stage_tb IS
     SIGNAL fourth_mem_address : STD_LOGIC_VECTOR(15 DOWNTO 0) := "0010011000011111";
     SIGNAL second_mem_address : STD_LOGIC_VECTOR(15 DOWNTO 0) := "0010001000000011";
     SIGNAL instruction : STD_LOGIC_VECTOR(15 DOWNTO 0);
-
+    SIGNAL PC_OUT : STD_LOGIC_VECTOR(15 DOWNTO 0);
     -- Clock generation process
     CONSTANT clk_period : TIME := 100 ps;
 
@@ -76,24 +87,24 @@ BEGIN
         pc_register_enable => pc_register_enable,
         index => index,
         reset => reset,
-        is_INT => is_INT,
-        is_RTI => is_RTI,
-        is_HLT => is_HLT,
-        is_JCond => is_JCond,
-        is_JMP => is_JMP,
-        is_CALL => is_CALL,
-        is_RET => is_RET,
-        is_EmptySP => is_EmptySP,
-        is_InvMemAddress => is_InvMemAddress,
-        is_NOP => is_NOP,
-        address_to_jump => address_to_jump,
-        popped_address_to_jump => popped_address_to_jump,
-        first_mem_address => first_mem_address,
-        fourth_mem_address => fourth_mem_address,
-        second_mem_address => second_mem_address,
-        instruction => instruction
+        INT => is_INT,
+        RTI => is_RTI,
+        HLT => is_HLT,
+        JCond => is_JCond,
+        JMP => is_JMP,
+        CALL => is_CALL,
+        RET => is_RET,
+        empty_SP => is_EmptySP,
+        invalid_mem_address => is_InvMemAddress,
+        NOP => is_NOP,
+        Rsrc1 => (OTHERS => '0'),
+        DM_SP => (OTHERS => '0'),
+        IM_0 => first_mem_address,
+        IM_4 => fourth_mem_address,
+        IM_2 => second_mem_address,
+        instruction => instruction,
+        PC_OUT => PC_OUT
     );
-
     -- Test process
     PROCESS
     BEGIN

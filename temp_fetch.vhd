@@ -100,8 +100,8 @@ ARCHITECTURE fetch_stage_architecture OF fetch_stage IS
         );
     END COMPONENT;
 
-    SIGNAL next_pc : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL pc_reg_out : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL next_pc : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+    SIGNAL pc_reg_out : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
     SIGNAL current_pc : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
 
     SIGNAL adder_carry_out : STD_LOGIC;
@@ -120,6 +120,23 @@ ARCHITECTURE fetch_stage_architecture OF fetch_stage IS
     SIGNAL IM_6 : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
     SIGNAL IM_8 : STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
 BEGIN
+
+    PROCESS (reset)
+    BEGIN
+        IF reset = '1' THEN
+            next_pc <= (OTHERS => '0');
+            pc_reg_out <= (OTHERS => '0');
+            current_pc <= (OTHERS => '0');
+            fetched_instruction <= (OTHERS => '0');
+            boomb_mux_out <= (OTHERS => '0');
+            boomb_mux_in <= (OTHERS => '0');
+            memory_mux_out <= (OTHERS => '0');
+            memory_mux_in <= (OTHERS => '0');
+            pc_handler_selector <= (OTHERS => '0');
+            IM_6 <= (OTHERS => '0');
+            IM_8 <= (OTHERS => '0');
+        END IF;
+    END PROCESS;
 
     pc_handler_instance : pc_handler
     PORT MAP(
@@ -152,10 +169,8 @@ BEGIN
         write_enable => pc_register_enable,
         clk => clk,
         reset => reset,
-        data_out => pc_reg_out
+        data_out => current_pc
     );
-
-    current_pc <= pc_reg_out;
 
     pc_adder_instance : n_bit_adder
     PORT MAP(
