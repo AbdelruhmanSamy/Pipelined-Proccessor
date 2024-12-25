@@ -8,8 +8,8 @@ ENTITY input_port IS
     PORT (
         clk : IN STD_LOGIC; -- Clock signal
         reset : IN STD_LOGIC; -- Reset signal
-        INPUT : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
-        OUTPUT : OUT STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0)
+        data_in : IN STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0);
+        data_out : OUT STD_LOGIC_VECTOR(DATA_SIZE - 1 DOWNTO 0)
     );
 END ENTITY input_port;
 
@@ -21,22 +21,22 @@ ARCHITECTURE behavior OF input_port IS
 
 BEGIN
 
-    -- Map the INPUT port to the internal signal
-    input_signal <= INPUT;
+    -- Map the data_in port to the internal signal
+    input_signal <= data_in;
 
     -- Process block to handle the logic
     PROCESS (clk, reset)
     BEGIN
         IF reset = '1' THEN
-            -- Reset the OUTPUT to zero
+            -- Reset the data_out to zero
             temp_output_value <= (OTHERS => '0');
-        ELSIF rising_edge(clk) THEN
+            ELSIF rising_edge(clk) THEN
             -- Example logic: Pass the input directly to the output
             temp_output_value <= input_signal;
         END IF;
     END PROCESS;
 
-    -- Assign the processed value to OUTPUT
-    OUTPUT <= temp_output_value;
+    -- Assign the processed value to data_out
+    data_out <= temp_output_value;
 
 END ARCHITECTURE behavior;

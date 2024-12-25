@@ -4,15 +4,10 @@ USE ieee.numeric_std.ALL;
 
 ENTITY exe_stage IS
     PORT (
-        WB_IN, MEM_IN : IN STD_LOGIC;
         EXE_IN : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-        PC_IN, operand1, operand2, immediate_IN : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
-        Rdst_IN : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+        operand1, operand2, immediate_IN : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
         ALUSrc, Inc : IN STD_LOGIC;
 
-        WB_OUT, MEM_OUT : OUT STD_LOGIC;
-        Rdst_OUT : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-        PC_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         memory_address, memory_data, immediate_OUT : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
     );
 END exe_stage;
@@ -102,10 +97,6 @@ BEGIN
         CarryFlag => output_flags_sig(2)
     );
 
-    WB_OUT <= WB_IN;
-    MEM_OUT <= MEM_IN;
-    PC_OUT <= PC_IN;
-    Rdst_OUT <= Rdst_IN;
     memory_address <= alu_result_sig;
     memory_data <= operand2;
     immediate_OUT <= immediate_IN;
